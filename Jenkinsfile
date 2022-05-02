@@ -8,8 +8,10 @@ pipeline {
               }
              }
             stage ("Deploy") {
-                sh " docker build -t newimage:1.0 ."
+                steps {
+                sh "docker build -t newimage:1.0 ."
                 sh "docker run -itdp 8084:8084 newimage:1.0"
+              }
             }
          }
       }
