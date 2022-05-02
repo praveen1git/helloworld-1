@@ -3,7 +3,7 @@ pipeline {
         stages {
             stage ("build") {
                 steps {
-                git url: 'https://github.com/jabedhasan21/java-hello-world-with-maven.git'
+                git url: 'https://github.com/praveen1git/helloworld-1.git'
                 sh "mvn -X clean package"
               }
              }
