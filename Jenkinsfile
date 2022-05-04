@@ -4,7 +4,6 @@ pipeline {
             stage ("build") {
                 steps {
                 sh "git clone https://github.com/praveen1git/helloworld-1.git"
-		sh "mvn -X clean package"
               }
              }
             stage ("Deploy") {
