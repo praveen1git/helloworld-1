@@ -4,13 +4,9 @@ pipeline {
             stage ("build") {
                 steps {
                 sh "git clone https://github.com/praveen1git/helloworld-1.git"
+		sh "mvn -X clean package"
               }
              }
-            stage('Mvn Package'){
-	  def mvnHome = tool name: 'maven-3.8.5', type: 'maven'
-	  def mvnCMD = "${mvnHome}/bin/mvn"
-	  sh "${mvnCMD} clean package"
-	}
             stage ("Deploy") {
                 steps {
                 sh "docker build -t newimage:1.0 ."
